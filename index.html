@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe Gonçalves dos Santos | Cloud & Fullstack Portfolio</title>
+    <meta name="description" content="Portfólio profissional de Felipe Gonçalves dos Santos. Desenvolvedor Full-Stack focado em Cloud Computing, AWS e infraestrutura ágil. Conheça meus projetos e simule arquiteturas.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas para Rede de Partículas -->
+    <canvas id="network-canvas"></canvas>
+
+    <!-- Header / Navbar -->
+    <header class="main-header">
+        <div class="container navbar-container">
+            <a href="#" class="logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">Felipe.Dev</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            <nav class="main-nav" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#about" class="nav-link">Sobre</a></li>
+                    <li><a href="#aws-simulator" class="nav-link">AWS Hub</a></li>
+                    <li><a href="#projects" class="nav-link">Projetos</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="nav-action">
+                <a href="#contact" class="btn btn-secondary nav-btn">Contratar</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-tagline">Infraestrutura & AWS Cloud</span>
+                    <h1 class="hero-title">Felipe Gonçalves<br><span class="gradient-text">dos Santos</span></h1>
+                    <p class="hero-description">
+                        Construindo aplicações escaláveis e focando no design de infraestruturas resilientes na nuvem. Atualmente aprofundando em arquiteturas AWS modernas, Terraform e práticas de DevOps.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#aws-simulator" class="btn btn-primary" id="btn-explore-aws">Explorar AWS Hub</a>
+                        <a href="#projects" class="btn btn-outline" id="btn-view-projects">Ver Projetos</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="visual-cloud-card">
+                        <div class="cloud-card-header">
+                            <div class="cloud-dot red"></div>
+                            <div class="cloud-dot yellow"></div>
+                            <div class="cloud-dot green"></div>
+                            <span class="cloud-card-title">felipe@aws-terminal:~ (interativo)</span>
+                        </div>
+                        <div class="cloud-card-body terminal-body">
+                            <div class="terminal-output" id="terminal-output">
+                                <p class="console-line text-muted">// Terminal Nuvem Felipe Gonçalves v1.0</p>
+                                <p class="console-line text-muted">// Digite 'help' para comandos ou explore o site.</p>
+                                <p class="console-line"><span class="console-prompt">$</span> aws s3 ls</p>
+                                <p class="console-line text-success">s3://felipe-projetos-bucket</p>
+                                <p class="console-line text-success">s3://felipe-aws-estudos</p>
+                            </div>
+                            <div class="terminal-input-line">
+                                <span class="console-prompt">$</span>
+                                <input type="text" id="terminal-input" placeholder="digite help..." autocomplete="off" aria-label="Terminal Shell Command">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Skills Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Minha Jornada</span>
+                    <h2 class="section-title">Sobre Mim & Skills</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text-card">
+                        <h3>Olá, eu sou o Felipe</h3>
+                        <p>
+                            Sempre fui fascinado pela forma como a tecnologia conecta as pontas. Iniciei minha jornada desenvolvendo aplicações no <strong>Frontend</strong> e <strong>Backend</strong>, compreendendo todo o ciclo de vida do desenvolvimento de software.
+                        </p>
+                        <p>
+                            Hoje, percebo que criar um bom código é apenas metade do caminho. Minha verdadeira paixão brilha ao desenhar o ambiente onde esse código roda. Por isso, estou direcionando meu foco para <strong>Cloud Infrastructure</strong>, com especialização em <strong>AWS</strong>.
+                        </p>
+                        <p>
+                            Estudo diariamente práticas de Infraestrutura como Código (IaC), deploy contínuo (CI/CD) e arquiteturas escaláveis e resilientes na nuvem da AWS.
+                        </p>
+                    </div>
+
+                    <div class="skills-card">
+                        <h3>Tech Stack & Competências</h3>
+                        
+                        <div class="skill-category">
+                            <h4>Cloud & Infra (Foco Principal)</h4>
+                            <div class="skill-tags">
+                                <span class="tag tag-aws">AWS (EC2, S3, RDS, Lambda, IAM, VPC)</span>
+                                <span class="tag tag-iac">Terraform (IaC)</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">Linux / Shell Scripting</span>
+                                <span class="tag">CI/CD (GitHub Actions)</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4>Backend (Desenvolvimento)</h4>
+                            <div class="skill-tags">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Express</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">RESTful APIs</span>
+                                <span class="tag">PostgreSQL / MongoDB</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4>Frontend (Interface)</h4>
+                            <div class="skill-tags">
+                                <span class="tag">HTML5 / CSS3</span>
+                                <span class="tag">JavaScript (ES6+)</span>
+                                <span class="tag">React.js</span>
+                                <span class="tag">Design Responsivo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AWS Architecture Simulator Section -->
+        <section id="aws-simulator" class="simulator-section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-subtitle">Arquiteturas Interativas</span>
+                    <h2 class="section-title">AWS Interactive Architecture Hub</h2>
+                    <p class="section-desc">
+                        Clique nos componentes da infraestrutura abaixo para simular o fluxo de dados e entender como eu os configuro e aplico no meu dia a dia.
+                    </p>
+                </div>
+
+                <div class="simulator-layout">
+                    <!-- Interactive Architecture Board -->
+                    <div class="simulator-board-wrapper">
+                        <div class="board-header">
+                            <span class="vpc-tag">AWS Region: us-east-1</span>
+                            <div class="board-status">
+                                <span class="status-indicator online"></span>
+                                <span class="status-text">Stack Ativa</span>
+                            </div>
+                        </div>
+                        
+                        <div class="architecture-board" id="architecture-board">
+                            <!-- Edge Location -->
+                            <div class="arch-layer" data-layer="edge">
+                                <div class="layer-title">Edge Location</div>
+                                <div class="nodes-container">
+                                    <button class="node-btn active" id="node-cloudfront" data-service="cloudfront" aria-label="AWS CloudFront">
+                                        <div class="node-icon">
+                                            <!-- CloudFront SVG -->
+                                            <svg viewBox="0 0 50 50">
+                                                <path d="M25,5 C14,5 5,14 5,25 C5,36 14,45 25,45 C36,45 45,36 45,25 C45,14 36,5 25,5 Z M25,40 C16.7,40 10,33.3 10,25 C10,16.7 16.7,10 25,10 C33.3,10 40,16.7 40,25 C40,33.3 33.3,40 25,40 Z" fill="currentColor"/>
+                                                <circle cx="25" cy="25" r="5" fill="currentColor"/>
+                                                <path d="M25,10 L25,20" stroke="currentColor" stroke-width="2"/>
+                                                <path d="M25,30 L25,40" stroke="currentColor" stroke-width="2"/>
+                                                <path d="M10,25 L20,25" stroke="currentColor" stroke-width="2"/>
+                                                <path d="M30,25 L40,25" stroke="currentColor" stroke-width="2"/>
+                                            </svg>
+                                        </div>
+                                        <span class="node-label">CloudFront</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- VPC Border -->
+                            <div class="vpc-container">
+                                <div class="vpc-label">VPC (Virtual Private Cloud) - 10.0.0.0/16</div>
+                                
+                                <div class="subnets-wrapper">
+                                    <!-- Public Subnet -->
+                                    <div class="subnet-box public">
+                                        <div class="subnet-label">Subnet Pública (10.0.1.0/24)</div>
+                                        <div class="nodes-container">
+                                            <button class="node-btn" id="node-alb" data-service="alb" aria-label="Application Load Balancer">
+                                                <div class="node-icon">
+                                                    <!-- ALB SVG -->
+                                                    <svg viewBox="0 0 50 50">
+                                                        <rect x="15" y="10" width="20" height="8" rx="2" fill="currentColor"/>
+                                                        <rect x="15" y="32" width="20" height="8" rx="2" fill="currentColor"/>
+                                                        <path d="M25,18 L25,32" stroke="currentColor" stroke-width="3" stroke-dasharray="3,3"/>
+                                                        <polygon points="25,30 21,26 29,26" fill="currentColor"/>
+                                                        <polygon points="25,20 21,24 29,24" fill="currentColor"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="node-label">ALB (Load Balancer)</span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Private Subnet -->
+                                    <div class="subnet-box private">
+                                        <div class="subnet-label">Subnet Privada (10.0.2.0/24)</div>
+                                        <div class="nodes-container">
+                                            <button class="node-btn" id="node-ec2" data-service="ec2" aria-label="Amazon EC2 Auto Scaling">
+                                                <div class="node-icon">
+                                                    <!-- EC2 SVG -->
+                                                    <svg viewBox="0 0 50 50">
+                                                        <rect x="10" y="10" width="30" height="30" rx="3" fill="none" stroke="currentColor" stroke-width="3"/>
+                                                        <rect x="16" y="16" width="18" height="18" fill="currentColor"/>
+                                                        <line x1="8" y1="18" x2="12" y2="18" stroke="currentColor" stroke-width="3"/>
+                                                        <line x1="8" y1="25" x2="12" y2="25" stroke="currentColor" stroke-width="3"/>
+                                                        <line x1="8" y1="32" x2="12" y2="32" stroke="currentColor" stroke-width="3"/>
+                                                        <line x1="38" y1="18" x2="42" y2="18" stroke="currentColor" stroke-width="3"/>
+                                                        <line x1="38" y1="25" x2="42" y2="25" stroke="currentColor" stroke-width="3"/>
+                                                        <line x1="38" y1="32" x2="42" y2="32" stroke="currentColor" stroke-width="3"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="node-label">EC2 (Auto Scaling)</span>
+                                            </button>
+                                            
+                                            <button class="node-btn" id="node-lambda" data-service="lambda" aria-label="AWS Lambda">
+                                                <div class="node-icon">
+                                                    <!-- Lambda SVG -->
+                                                    <svg viewBox="0 0 50 50">
+                                                        <path d="M12,40 L22,25 L16,25 L38,10 L28,25 L34,25 Z" fill="currentColor"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="node-label">AWS Lambda</span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Database Subnet -->
+                                    <div class="subnet-box db">
+                                        <div class="subnet-label">Subnet de Banco de Dados</div>
+                                        <div class="nodes-container">
+                                            <button class="node-btn" id="node-rds" data-service="rds" aria-label="Amazon RDS Multi-AZ">
+                                                <div class="node-icon">
+                                                    <!-- RDS SVG -->
+                                                    <svg viewBox="0 0 50 50">
+                                                        <ellipse cx="25" cy="15" rx="15" ry="6" fill="none" stroke="currentColor" stroke-width="3"/>
+                                                        <path d="M10,15 L10,25 C10,28.3 16.7,31 25,31 C33.3,31 40,28.3 40,25 L40,15" fill="none" stroke="currentColor" stroke-width="3"/>
+                                                        <path d="M10,25 L10,35 C10,38.3 16.7,41 25,41 C33.3,41 40,38.3 40,35 L40,25" fill="none" stroke="currentColor" stroke-width="3"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="node-label">RDS (Multi-AZ)</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Storage Layer (Global) -->
+                            <div class="arch-layer" data-layer="global">
+                                <div class="layer-title">Armazenamento Global</div>
+                                <div class="nodes-container">
+                                    <button class="node-btn" id="node-s3" data-service="s3" aria-label="Amazon S3 Bucket">
+                                        <div class="node-icon">
+                                            <!-- S3 SVG -->
+                                            <svg viewBox="0 0 50 50">
+                                                <polygon points="25,5 40,13 40,37 25,45 10,37 10,13" fill="none" stroke="currentColor" stroke-width="3"/>
+                                                <polyline points="10,13 25,21 40,13" fill="none" stroke="currentColor" stroke-width="3"/>
+                                                <line x1="25" y1="21" x2="25" y2="45" stroke="currentColor" stroke-width="3"/>
+                                            </svg>
+                                        </div>
+                                        <span class="node-label">Amazon S3</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Console/Terminal for AWS details -->
+                    <div class="simulator-console">
+                        <div class="console-header">
+                            <div class="console-nav">
+                                <span class="tab-button active" id="tab-specs">AWS Config Specs</span>
+                            </div>
+                        </div>
+                        <div class="console-body" id="console-details">
+                            <!-- CloudFront Details (Default Active) -->
+                            <div class="service-details active" id="details-cloudfront">
+                                <div class="service-header-info">
+                                    <span class="service-badge badge-edge">Edge Service</span>
+                                    <h3>Amazon CloudFront</h3>
+                                </div>
+                                <p class="service-desc-text">
+                                    Distribuição de conteúdo global (CDN) com baixíssima latência e alta velocidade de transferência de dados.
+                                </p>
+                                <div class="service-skills-list">
+                                    <h4>Minha proficiência neste recurso:</h4>
+                                    <ul>
+                                        <li>Configuração de distribuições HTTPS seguras vinculadas com <strong>AWS Certificate Manager (ACM)</strong>.</li>
+                                        <li>Otimização de cache utilizando políticas customizadas e invalidação automática de cache via CI/CD.</li>
+                                        <li>Origens configuradas dinamicamente apontando para S3 (site estático/assets) e Application Load Balancer (para a API backend).</li>
+                                    </ul>
+                                </div>
+                                <div class="iac-block">
+                                    <div class="iac-title">Código Terraform Recomendado:</div>
+                                    <pre><code>resource "aws_cloudfront_distribution" "s3_distribution" {
+  origin {
+    domain_name = aws_s3_bucket.portfolio_bucket.bucket_regional_domain_name
+    origin_id   = "S3-Portfolio"
+  }
+  enabled             = true
+  default_root_object = "index.html"
+}</code></pre>
+                                </div>
+                            </div>
+
+                            <!-- ALB Details -->
+                            <div class="service-details" id="details-alb">
+                                <div class="service-header-info">
+                                    <span class="service-badge badge-network">Networking</span>
+                                    <h3>Application Load Balancer (ALB)</h3>
+                                </div>
+                                <p class="service-desc-text">
+                                    Roteador inteligente de requisições HTTP/HTTPS entre múltiplas instâncias na VPC, distribuindo o tráfego de forma uniforme.
+                                </p>
+                                <div class="service-skills-list">
+                                    <h4>Minha proficiência neste recurso:</h4>
+                                    <ul>
+                                        <li>Criação de Target Groups com Health Checks inteligentes para evitar envio de requisições a servidores offline.</li>
+                                        <li>Associação com políticas de HTTPS para SSL Offloading e redirecionamentos automáticos de HTTP para HTTPS (porta 80 -> 443).</li>
+                                        <li>Distribuição de tráfego de entrada em múltiplas Zonas de Disponibilidade (Availability Zones).</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- EC2 Details -->
+                            <div class="service-details" id="details-ec2">
+                                <div class="service-header-info">
+                                    <span class="service-badge badge-compute">Compute</span>
+                                    <h3>Amazon EC2 & Auto Scaling</h3>
+                                </div>
+                                <p class="service-desc-text">
+                                    Capacidade computacional escalável na nuvem através de servidores virtuais redimensionáveis de acordo com a demanda real.
+                                </p>
+                                <div class="service-skills-list">
+                                    <h4>Minha proficiência neste recurso:</h4>
+                                    <ul>
+                                        <li>Provisionamento de instâncias utilizando Launch Templates declarativos e scripts de inicialização (User Data) automatizados.</li>
+                                        <li>Configuração de políticas de Auto Scaling dinâmicas baseadas no consumo de CPU e memória.</li>
+                                        <li>Segurança rigorosa com Security Groups estruturados sob o princípio do privilégio mínimo de conexões de rede.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Lambda Details -->
+                            <div class="service-details" id="details-lambda">
+                                <div class="service-header-info">
+                                    <span class="service-badge badge-compute">Compute (Serverless)</span>
+                                    <h3>AWS Lambda</h3>
+                                </div>
+                                <p class="service-desc-text">
+                                    Execução de código orientada a eventos sem a necessidade de provisionar ou gerenciar servidores físicos ou virtuais.
+                                </p>
+                                <div class="service-skills-list">
+                                    <h4>Minha proficiência neste recurso:</h4>
+                                    <ul>
+                                        <li>Desenvolvimento de funções serverless em Node.js com empacotamento enxuto de dependências.</li>
+                                        <li>Integração nativa com API Gateway para expor endpoints REST de forma performática e econômica.</li>
+                                        <li>Garantia de segurança utilizando Roles dedicadas do IAM com acessos restritos a recursos específicos (como S3 e DynamoDB).</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- RDS Details -->
+                            <div class="service-details" id="details-rds">
+                                <div class="service-header-info">
+                                    <span class="service-badge badge-db">Database</span>
+                                    <h3>Amazon RDS Multi-AZ</h3>
+                                </div>
+                                <p class="service-desc-text">
+                                    Serviço de Banco de Dados Relacional gerenciado de fácil configuração, operação e escalabilidade na nuvem.
+                                </p>
+                                <div class="service-skills-list">
+                                    <h4>Minha proficiência neste recurso:</h4>
+                                    <ul>
+                                        <li>Provisionamento de instâncias PostgreSQL e MySQL com implantação Multi-AZ para alta disponibilidade e failover automático.</li>
+                                        <li>Políticas de backup agendadas com retenção de snapshots e criptografia de dados em repouso com chaves AWS KMS.</li>
+                                        <li>Isolamento de banco em subredes privadas dedicadas sem acesso direto pela internet.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- S3 Details -->
+                            <div class="service-details" id="details-s3">
+                                <div class="service-header-info">
+                                    <span class="service-badge badge-storage">Storage</span>
+                                    <h3>Amazon Simple Storage Service (S3)</h3>
+                                </div>
+                                <p class="service-desc-text">
+                                    Armazenamento de objetos seguro, altamente escalável e de altíssima durabilidade (99.999999999% de durabilidade).
+                                </p>
+                                <div class="service-skills-list">
+                                    <h4>Minha proficiência neste recurso:</h4>
+                                    <ul>
+                                        <li>Hospedagem estática de sites seguros combinados com políticas rígidas de Bucket Policies e bloqueio de acesso público padrão.</li>
+                                        <li>Políticas de Ciclo de Vida (Lifecycle Rules) inteligentes para transição de classes de armazenamento baratas (Glacier) para otimização de custos.</li>
+                                        <li>Configuração de versionamento de objetos para prevenção de deleções acidentais.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Meus Trabalhos</span>
+                    <h2 class="section-title">Projetos em Destaque</h2>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 (Infra / IaC) -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <!-- Visual placeholder using beautiful AWS-themed SVG structure -->
+                            <svg class="project-placeholder-svg" viewBox="0 0 400 200">
+                                <defs>
+                                    <linearGradient id="proj1-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#FF9900" />
+                                        <stop offset="100%" stop-color="#8C4FFF" />
+                                    </linearGradient>
+                                </defs>
+                                <rect width="400" height="200" fill="url(#proj1-grad)" opacity="0.15" />
+                                <text x="50%" y="50%" text-anchor="middle" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="bold">Infraestrutura AWS (IaC)</text>
+                                <text x="50%" y="65%" text-anchor="middle" fill="#A0AEC0" font-family="'Inter', sans-serif" font-size="12">Terraform & GitHub Actions</text>
+                            </svg>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category">Infraestrutura / Cloud</span>
+                            <h3>Pipeline IaC Automatizado</h3>
+                            <p>
+                                Provisionamento declarativo de uma VPC multi-camada com instâncias EC2 sob Load Balancer e banco RDS gerenciado. Todo deploy é gerido via Terraform integrado ao GitHub Actions (CI/CD).
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Terraform</span>
+                                <span class="tag">AWS VPC</span>
+                                <span class="tag">GitHub Actions</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 (Backend) -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <svg class="project-placeholder-svg" viewBox="0 0 400 200">
+                                <defs>
+                                    <linearGradient id="proj2-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#00C6FF" />
+                                        <stop offset="100%" stop-color="#0072FF" />
+                                    </linearGradient>
+                                </defs>
+                                <rect width="400" height="200" fill="url(#proj2-grad)" opacity="0.15" />
+                                <text x="50%" y="50%" text-anchor="middle" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="bold">API REST Serverless</text>
+                                <text x="50%" y="65%" text-anchor="middle" fill="#A0AEC0" font-family="'Inter', sans-serif" font-size="12">Node.js, Express & Lambda</text>
+                            </svg>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category">Backend Development</span>
+                            <h3>API REST de Alta Disponibilidade</h3>
+                            <p>
+                                Construção de API backend altamente escalável utilizando Node.js e Express, otimizada para ser hospedada em funções AWS Lambda integradas com API Gateway e banco relacional PostgreSQL.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Express</span>
+                                <span class="tag">AWS Lambda</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 (Frontend) -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <svg class="project-placeholder-svg" viewBox="0 0 400 200">
+                                <defs>
+                                    <linearGradient id="proj3-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#30CFD0" />
+                                        <stop offset="100%" stop-color="#330867" />
+                                    </linearGradient>
+                                </defs>
+                                <rect width="400" height="200" fill="url(#proj3-grad)" opacity="0.15" />
+                                <text x="50%" y="50%" text-anchor="middle" fill="#FFFFFF" font-family="'Space Grotesk', sans-serif" font-size="20" font-weight="bold">Painel Administrativo Realtime</text>
+                                <text x="50%" y="65%" text-anchor="middle" fill="#A0AEC0" font-family="'Inter', sans-serif" font-size="12">React, Tailwind & WebSockets</text>
+                            </svg>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category">Frontend Development</span>
+                            <h3>Dashboard de Métricas em Tempo Real</h3>
+                            <p>
+                                Interface administrativa rica projetada em React para visualização de logs, status de deploy e consumo de recursos. Integrada com WebSockets para atualizações de latência em milissegundos.
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">CSS Grid/Flexbox</span>
+                                <span class="tag">API REST</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-card">
+                    <div class="contact-info-panel">
+                        <span class="contact-tag">Fale Comigo</span>
+                        <h2>Vamos construir algo incrível na nuvem?</h2>
+                        <p>
+                            Estou aberto a oportunidades de estágio, posições juniores em Cloud/DevOps e colaboração em projetos de código aberto. Se você busca alguém dedicado a infraestrutura moderna, fale comigo!
+                        </p>
+                        
+                        <div class="contact-details-list">
+                            <div class="contact-item">
+                                <span class="contact-icon">📧</span>
+                                <span class="contact-text">felipegz.az@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">📍</span>
+                                <span class="contact-text">Uberlândia, MG, Brasil (Remoto/Híbrido)</span>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" id="link-github">GitHub</a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" id="link-linkedin">LinkedIn</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-panel">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="form-name">Nome Completo</label>
+                                <input type="text" id="form-name" required placeholder="Ex: Felipe Gonçalves">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">E-mail Profissional</label>
+                                <input type="email" id="form-email" required placeholder="seuemail@empresa.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-message">Mensagem / Proposta</label>
+                                <textarea id="form-message" required rows="4" placeholder="Escreva sobre seu projeto ou oportunidade..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" id="btn-submit-form">Enviar Mensagem</button>
+                        </form>
+                        <div id="form-feedback" class="form-feedback hidden">
+                            <span class="feedback-icon">✓</span> Mensagem enviada com sucesso! Obrigado pelo contato.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Felipe Gonçalves dos Santos. Desenvolvido com foco e infraestrutura.</p>
+            <p class="footer-note">Hospedado na AWS (S3 + CloudFront)</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
