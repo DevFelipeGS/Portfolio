@@ -43,9 +43,13 @@ function initNetworkCanvas() {
         mouse.y = null;
     });
 
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }, 100);
     });
 
     class Particle {
@@ -278,10 +282,18 @@ function initTerminalTyping() {
             const commandText = input.value.trim();
             if (commandText === '') return;
 
-            // Log command to history
+            // Log command to history (securely avoiding XSS)
             const cmdLine = document.createElement('p');
             cmdLine.className = 'console-line';
-            cmdLine.innerHTML = `<span class="console-prompt">$</span> ${commandText}`;
+            
+            const promptSpan = document.createElement('span');
+            promptSpan.className = 'console-prompt';
+            promptSpan.textContent = '$ ';
+            
+            const commandTextNode = document.createTextNode(commandText);
+            
+            cmdLine.appendChild(promptSpan);
+            cmdLine.appendChild(commandTextNode);
             output.appendChild(cmdLine);
 
             // Process command
